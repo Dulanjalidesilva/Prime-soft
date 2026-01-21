@@ -31,6 +31,15 @@ const PRODUCTS = [
   }
 ];
 
+const OFFERS = [
+  { title: "Offer 01", sub: "Tap to preview", src: "assets/promo-1.jpg" },
+  { title: "Offer 02", sub: "Tap to preview", src: "assets/promo-2.jpg" },
+  { title: "Offer 03", sub: "Tap to preview", src: "assets/promo-3.jpg" },
+  { title: "Offer 04", sub: "Tap to preview", src: "assets/promo-4.jpg" },
+  { title: "Offer 05", sub: "Tap to preview", src: "assets/promo-5.jpg" },
+  { title: "Offer 06", sub: "Tap to preview", src: "assets/promo-6.jpg" },
+];
+
 const WA_NUMBER = "94726000557"; // +94 72 6000 557 (no leading 0)
 const WA_CATALOG = "https://wa.me/c/94726000557";
 
@@ -39,6 +48,7 @@ function waMessageLink(text){
   return `https://wa.me/${WA_NUMBER}?text=${msg}`;
 }
 
+/* Products */
 function createProductCard(p){
   const el = document.createElement("div");
   el.className = "product";
@@ -56,6 +66,7 @@ function createProductCard(p){
 
 function renderProducts(list){
   const grid = document.getElementById("productGrid");
+  if(!grid) return;
   grid.innerHTML = "";
   list.forEach(p => grid.appendChild(createProductCard(p)));
 
@@ -63,7 +74,12 @@ function renderProducts(list){
     const empty = document.createElement("div");
     empty.className = "card";
     empty.style.gridColumn = "1 / -1";
-    empty.innerHTML = `<strong>No results.</strong><div class="muted" style="margin-top:6px;">Catalog එකෙන් බලන්න: <a href="${WA_CATALOG}" target="_blank" rel="noopener" style="text-decoration:underline;">Open WhatsApp Catalog</a></div>`;
+    empty.innerHTML = `
+      <strong>No results.</strong>
+      <div class="muted" style="margin-top:6px;">
+        Catalog එකෙන් බලන්න:
+        <a href="${WA_CATALOG}" target="_blank" rel="noopener" style="text-decoration:underline;">Open WhatsApp Catalog</a>
+      </div>`;
     grid.appendChild(empty);
   }
 }
@@ -71,6 +87,7 @@ function renderProducts(list){
 function setupSearch(){
   const input = document.getElementById("search");
   const clearBtn = document.getElementById("clearSearch");
+  if(!input) return;
 
   function doFilter(){
     const q = (input.value || "").toLowerCase().trim();
@@ -84,7 +101,7 @@ function setupSearch(){
     renderProducts(filtered);
   }
 
-  input?.addEventListener("input", doFilter);
+  input.addEventListener("input", doFilter);
   clearBtn?.addEventListener("click", () => {
     input.value = "";
     input.focus();
@@ -92,6 +109,7 @@ function setupSearch(){
   });
 }
 
+/* Mobile Menu */
 function setupMobileMenu(){
   const btn = document.getElementById("hamburger");
   const menu = document.getElementById("mobileMenu");
@@ -103,7 +121,6 @@ function setupMobileMenu(){
     menu.setAttribute("aria-hidden", String(!isOpen));
   });
 
-  // close menu when clicking a link
   menu.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
       menu.classList.remove("open");
@@ -113,9 +130,84 @@ function setupMobileMenu(){
   });
 }
 
+/* Offers Gallery + Lightbox */
+function renderOffers(){
+  const gallery = document.getElementById("gallery");
+  if(!gallery) return;
+
+  gallery.innerHTML = "";
+  OFFERS.forEach((o, idx) => {
+    const card = document.createElement("div");
+    card.className = "offer";
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-label", `Open ${o.title}`);
+
+    card.innerHTML = `
+      <img src="${o.src}" alt="${o.title}" loading="lazy" />
+      <div class="offer-cap">
+        <div>
+          <div class="offer-title">${o.title}</div>
+          <div class="offer-sub">${o.sub}</div>
+        </div>
+        <div class="offer-sub">#${String(idx+1).padStart(2,"0")}</div>
+      </div>
+    `;
+
+    card.addEventListener("click", () => openLightbox(o.src));
+    card.addEventListener("keydown", (e) => {
+      if(e.key === "Enter" || e.key === " ") openLightbox(o.src);
+    });
+
+    gallery.appendChild(card);
+  });
+}
+
+function openLightbox(src){
+  const lb = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  if(!lb || !img) return;
+
+  img.src = src;
+  lb.classList.add("open");
+  lb.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox(){
+  const lb = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  if(!lb || !img) return;
+
+  lb.classList.remove("open");
+  lb.setAttribute("aria-hidden", "true");
+  img.src = "";
+  document.body.style.overflow = "";
+}
+
+function setupLightbox(){
+  const lb = document.getElementById("lightbox");
+  const closeBtn = document.getElementById("lightboxClose");
+  closeBtn?.addEventListener("click", closeLightbox);
+
+  lb?.addEventListener("click", (e) => {
+    // click outside image closes
+    if(e.target === lb) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape") closeLightbox();
+  });
+}
+
 (function init(){
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const y = document.getElementById("year");
+  if(y) y.textContent = new Date().getFullYear();
+
   renderProducts(PRODUCTS);
   setupSearch();
   setupMobileMenu();
+
+  renderOffers();
+  setupLightbox();
 })();

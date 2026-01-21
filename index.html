@@ -6,13 +6,13 @@
   <title>Prime Soft | Software Subscriptions</title>
   <meta name="description" content="CapCut Pro, Canva Pro, Adobe, Windows සහ තවත් software subscriptions. WhatsApp catalog එකෙන් order කරන්න." />
 
-  <!-- Open Graph (share preview) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Prime Soft | Software Subscriptions" />
   <meta property="og:description" content="CapCut Pro, Canva Pro, Adobe, Windows සහ තවත්. WhatsApp වලින් ඉක්මනින් order කරන්න." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="logo.jpeg" />
 
-  <link rel="icon" href="/logo.jpeg" />
+  <link rel="icon" href="logo.jpeg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -27,6 +27,8 @@
         <a class="topbar-link" href="https://wa.me/c/94726000557" target="_blank" rel="noopener">WhatsApp Catalog</a>
         <span class="dot">•</span>
         <a class="topbar-link" href="https://wa.me/94726000557" target="_blank" rel="noopener">Chat Now</a>
+        <span class="dot">•</span>
+        <a class="topbar-link" href="https://www.facebook.com/share/186GmUbWVY/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
       </div>
     </div>
   </div>
@@ -43,6 +45,7 @@
       </a>
 
       <nav class="menu" aria-label="Main navigation">
+        <a href="#offers">Offers</a>
         <a href="#products">Products</a>
         <a href="#how">How to Order</a>
         <a href="#faq">FAQ</a>
@@ -55,12 +58,14 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#offers">Offers</a>
       <a href="#products">Products</a>
       <a href="#how">How to Order</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a class="pill" href="https://wa.me/c/94726000557" target="_blank" rel="noopener">Open Catalog</a>
       <a class="pill outline" href="https://wa.me/94726000557" target="_blank" rel="noopener">WhatsApp Chat</a>
+      <a class="pill outline" href="https://www.facebook.com/share/186GmUbWVY/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
     </div>
   </header>
 
@@ -68,7 +73,7 @@
   <main id="home" class="hero">
     <div class="container hero-grid">
       <div class="hero-left">
-        <div class="badge">Official-style Service • Quick Activation</div>
+        <div class="badge">Quick Activation • WhatsApp Support</div>
         <h1>Software subscriptions <span class="accent">පහසුවෙන්</span> ගන්න Prime Soft එක්ක.</h1>
         <p class="lead">
           CapCut Pro, Canva Pro, Adobe, Windows සහ තවත් accounts / keys / subscriptions.
@@ -82,6 +87,9 @@
           <a class="btn outline" href="https://wa.me/94726000557" target="_blank" rel="noopener">
             WhatsApp: 072 6000 557
           </a>
+          <a class="btn outline" href="https://www.facebook.com/share/186GmUbWVY/?mibextid=wwXIfr" target="_blank" rel="noopener">
+            Facebook Page
+          </a>
         </div>
 
         <div class="trust">
@@ -91,8 +99,8 @@
             <span class="trust-sub">WhatsApp help</span>
           </div>
           <div class="trust-item">
-            <span class="trust-title">Secure</span>
-            <span class="trust-sub">Clear steps</span>
+            <span class="trust-title">Offers</span>
+            <span class="trust-sub">Latest deals</span>
           </div>
         </div>
       </div>
@@ -114,26 +122,42 @@
           </div>
 
           <p class="muted">
-            * Exact prices/availability WhatsApp catalog එකේ තියෙනවා.
+            * Prices/availability WhatsApp catalog එකේ update වෙනවා.
           </p>
 
-          <a class="mini-cta" href="#products">Browse Products ↓</a>
+          <a class="mini-cta" href="#offers">See Offers ↓</a>
         </div>
       </div>
     </div>
   </main>
 
+  <!-- OFFERS / IMAGES -->
+  <section id="offers" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Latest Offers</h2>
+        <p class="muted">ඔයා දාපු promo designs — click කරාම ලොකු වෙනවා (Zoom/Preview).</p>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <!-- populated by JS -->
+      </div>
+
+      <div class="section-foot">
+        <a class="btn" href="https://wa.me/c/94726000557" target="_blank" rel="noopener">Open WhatsApp Catalog</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Products -->
-  <section id="products" class="section">
+  <section id="products" class="section alt">
     <div class="container">
       <div class="section-head">
         <h2>Products</h2>
-        <p class="muted">මෙය sample list එකක්. Full list + prices WhatsApp catalog එකේ.</p>
+        <p class="muted">Sample list. Full list + prices WhatsApp catalog එකේ.</p>
       </div>
 
-      <div class="grid" id="productGrid">
-        <!-- Cards created by JS -->
-      </div>
+      <div class="grid" id="productGrid"></div>
 
       <div class="section-foot">
         <a class="btn" href="https://wa.me/c/94726000557" target="_blank" rel="noopener">Open Full WhatsApp Catalog</a>
@@ -142,7 +166,7 @@
   </section>
 
   <!-- How to order -->
-  <section id="how" class="section alt">
+  <section id="how" class="section">
     <div class="container">
       <div class="section-head">
         <h2>How to Order</h2>
@@ -161,7 +185,7 @@
           <div class="step-num">2</div>
           <div>
             <h3>Chat එකට message කරන්න</h3>
-            <p>Product name + duration + device details දාලා WhatsApp එකට message කරන්න.</p>
+            <p> WhatsApp එකට message කරන්න.</p>
           </div>
         </div>
         <div class="step">
@@ -180,13 +204,14 @@
         <div class="callout-actions">
           <a class="btn small" href="https://wa.me/94726000557" target="_blank" rel="noopener">Chat Now</a>
           <a class="btn small outline" href="https://wa.me/c/94726000557" target="_blank" rel="noopener">Catalog</a>
+          <a class="btn small outline" href="https://www.facebook.com/share/186GmUbWVY/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="section">
+  <section id="faq" class="section alt">
     <div class="container">
       <div class="section-head">
         <h2>FAQ</h2>
@@ -196,26 +221,22 @@
       <div class="faq">
         <details>
           <summary>Delivery/activation කොච්චර වෙලාවකින් දෙනවද?</summary>
-          <p>සාමාන්‍යයෙන් payment confirm උනාට පස්සේ ඉක්මනින් activation steps දෙනවා. (Exact time product එකට අනුව වෙනස් වෙයි.)</p>
+          <p>සාමාන්‍යයෙන් payment confirm උනාට පස්සේ ඉක්මනින් activation steps දෙනවා. (Product එකට අනුව වෙනස් වෙයි.)</p>
         </details>
         <details>
           <summary>Prices කොහෙද බලන්නෙ?</summary>
           <p>WhatsApp catalog එකේ full list + prices update වෙනවා.</p>
         </details>
         <details>
-          <summary>Windows / Office වගේ software keys අරගන්න පුළුවන්ද?</summary>
-          <p>ඔව්—available products catalog එකේ තියේ. Details සඳහා WhatsApp එකට message කරන්න.</p>
-        </details>
-        <details>
           <summary>Support තියෙනවද?</summary>
-          <p>WhatsApp support තියෙනවා. Issues උනොත් proof/details එක්ක message කරන්න.</p>
+          <p>WhatsApp support + Facebook page එකෙන් updates තියෙනවා.</p>
         </details>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section alt">
+  <section id="contact" class="section">
     <div class="container">
       <div class="section-head">
         <h2>Contact</h2>
@@ -232,15 +253,18 @@
         </div>
 
         <div class="contact-card">
-          <h3>Business Info</h3>
+          <h3>Facebook</h3>
+          <p class="muted">Offers / updates සඳහා page එක follow කරන්න</p>
+          <a class="btn outline" href="https://www.facebook.com/share/186GmUbWVY/?mibextid=wwXIfr" target="_blank" rel="noopener">
+            Open Facebook Page
+          </a>
+
+          <h3 style="margin-top:16px;">Business Info</h3>
           <ul class="bullets">
             <li>Brand: Prime Soft</li>
             <li>Category: Software subscriptions / licenses</li>
             <li>Order Method: WhatsApp</li>
           </ul>
-          <p class="small muted">
-            Note: ඔබ sell කරන products/licenses policy/legality තමන්ගේ sourcing අනුව ensure කරන්න.
-          </p>
         </div>
       </div>
     </div>
@@ -251,7 +275,7 @@
     <div class="container footer-inner">
       <div class="footer-left">
         <div class="footer-brand">
-          <img src="assets/logo.jpg" alt="Prime Soft logo" />
+          <img src="logo.jpeg" alt="Prime Soft logo" />
           <div>
             <div class="footer-title">PRIME SOFT</div>
             <div class="footer-sub">Software Subscriptions</div>
@@ -261,22 +285,36 @@
       </div>
 
       <div class="footer-right">
+        <a href="#offers">Offers</a>
         <a href="#products">Products</a>
         <a href="#how">How to Order</a>
         <a href="#faq">FAQ</a>
         <a href="https://wa.me/94726000557" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.facebook.com/share/186GmUbWVY/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
       </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp button -->
-  <a class="fab" href="https://wa.me/94726000557" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    WhatsApp
-  </a>
+  <!-- Floating buttons -->
+  <div class="fabs">
+    <a class="fab" href="https://wa.me/94726000557" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      WhatsApp
+    </a>
+    <a class="fab outline" href="https://www.facebook.com/share/186GmUbWVY/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Open Facebook">
+      Facebook
+    </a>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <img id="lightboxImg" alt="Offer preview" />
+    <div class="lightbox-actions">
+      <a class="btn small" href="https://wa.me/c/94726000557" target="_blank" rel="noopener">Catalog</a>
+      <a class="btn small outline" href="https://wa.me/94726000557" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-

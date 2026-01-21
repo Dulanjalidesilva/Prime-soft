@@ -32,12 +32,12 @@ const PRODUCTS = [
 ];
 
 const OFFERS = [
-  { title: "Offer 01", sub: "Tap to preview", src: "assets/promo-1.jpg" },
-  { title: "Offer 02", sub: "Tap to preview", src: "assets/promo-2.jpg" },
-  { title: "Offer 03", sub: "Tap to preview", src: "assets/promo-3.jpg" },
-  { title: "Offer 04", sub: "Tap to preview", src: "assets/promo-4.jpg" },
-  { title: "Offer 05", sub: "Tap to preview", src: "assets/promo-5.jpg" },
-  { title: "Offer 06", sub: "Tap to preview", src: "assets/promo-6.jpg" },
+  { title: "Offer 01", sub: "Tap to preview", src: "promo-1.jpeg" },
+  { title: "Offer 02", sub: "Tap to preview", src: "promo-2.jpeg" },
+  { title: "Offer 03", sub: "Tap to preview", src: "promo-3.jpeg" },
+  { title: "Offer 04", sub: "Tap to preview", src: "promo-4.jpeg" },
+  { title: "Offer 05", sub: "Tap to preview", src: "promo-5.jpeg" },
+  { title: "Offer 06", sub: "Tap to preview", src: "promo-6.jpeg" },
 ];
 
 const WA_NUMBER = "94726000557"; // +94 72 6000 557 (no leading 0)
@@ -211,3 +211,4 @@ function setupLightbox(){
   renderOffers();
   setupLightbox();
 })();
+
